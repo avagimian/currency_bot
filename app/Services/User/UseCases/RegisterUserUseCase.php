@@ -37,5 +37,8 @@ class RegisterUserUseCase extends AbstractBot
             $history = Histories::staticCreate($dto, $user->id);
             $history->save();
         });
+
+        $text = 'Вы зарегистрированы';
+        $this->sendMessage($dto->telegramId, $text);
     }
 }

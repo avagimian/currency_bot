@@ -18,7 +18,7 @@ class OtherCommandUseCase extends AbstractBot
      */
     public function run(UserDto $dto): void
     {
-        $text = $this->botTextReadRepository->getBySlug('try_another_command');
+        $text = $this->botTextReadRepository->getBySlug('try_another_command')->text;
         $this->sendMessage($dto->telegramId, $text);
     }
 }
